@@ -11,14 +11,11 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @Table
-@NoArgsConstructor(access = AccessLevel.PUBLIC, force = true)
 @AllArgsConstructor
 public class User implements UserDetails {
 	private static final long serialVersionUID = 1L;
@@ -29,6 +26,7 @@ public class User implements UserDetails {
 	private String password;
 	private String role;
 
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		List<GrantedAuthority> convertedRankList = 
@@ -56,5 +54,12 @@ public class User implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		return true;
+	}
+
+	public User(String username, String password, String role) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.role = role;
 	}
 }
