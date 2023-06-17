@@ -1,4 +1,4 @@
-package space.bumtiger.auth;
+package space.bumtiger.auth.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.Customizer;
