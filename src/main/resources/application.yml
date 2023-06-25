@@ -1,2 +1,9 @@
 server:
   port: 9000
+
+spring:
+  profiles.include: prod
+  datasource:
+    url: jdbc:mariadb://localhost:3306/auth_server
+    username: burger
+    driverClassName: org.mariadb.jdbc.Driver     
